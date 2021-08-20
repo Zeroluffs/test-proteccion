@@ -1,0 +1,16 @@
+.containerImg {
+    /* width: 796px;
+    height: 1123px; */
+    width: 60.39453717754173vw;
+    height: 170.92846270928462vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+  }
+  
+  .imgResize {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }

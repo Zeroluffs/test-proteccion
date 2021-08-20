@@ -1,9 +1,8 @@
 import "./App.css";
 
-import ImageResize from "./components/imageResize";
-
+import MainPage from "./pages/mainpage/MainPage";
 function App() {
-  return <ImageResize />;
+  return <MainPage />;
 }
 
 export default App;

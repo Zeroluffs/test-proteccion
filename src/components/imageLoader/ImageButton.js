@@ -1,8 +1,8 @@
-import "../App.css";
-import React, { useState } from "react";
+import "./styles/imageButton.css";
+import React, { useState, Fragment } from "react";
 import { PhotoCamera } from "@material-ui/icons";
 import { IconButton, Tooltip, makeStyles } from "@material-ui/core";
-
+import ImageComponent from "../image/ImageComponent";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ImageResize() {
+function ImageButton() {
   const classes = useStyles();
-
   const [image, setImage] = useState("");
   const [imageName, setImageName] = useState("");
+
   const fileSelect = (e) => {
     console.log(e.target.files[0]);
     let img = e.target.files[0];
@@ -30,7 +30,7 @@ function ImageResize() {
   };
 
   return (
-    <div className="mainContainer">
+    <Fragment>
       <div className="imgButton">
         <>
           <input
@@ -55,23 +55,9 @@ function ImageResize() {
           <label>{image ? imageName : "Select Image"}</label>
         </>
       </div>
-      {/* <input type="file" onChange={fileSelect}></input> */}
-      <div className="containerImg">
-        <img className="imgResize" alt="" src={image} />
-        {/* <Paper variant="outlined">
-          <Container style={{ width: "796", height: "1123" }}>
-            <img
-              alt="eve"
-              src={cEve}
-              style={{
-                objectFit: "contain",
-              }}
-            ></img>
-          </Container>
-        </Paper> */}
-      </div>
-    </div>
+      <ImageComponent image={image}></ImageComponent>
+    </Fragment>
   );
 }
 
-export default ImageResize;
+export default ImageButton;
