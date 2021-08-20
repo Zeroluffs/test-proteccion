@@ -39,6 +39,7 @@ function ImageButton() {
             id="faceImage"
             type="file"
             onChange={fileSelect}
+            data-testid="required-input"
           />
           <Tooltip title="Select Imagee">
             <label htmlFor="faceImage">
